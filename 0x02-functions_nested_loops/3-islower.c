@@ -2,13 +2,17 @@
 /**
  * _islower - checks for lowercase character
  * @c: The character to be checked
- * Return: 1 for lowercase character or 0 for anything else
+ * Return: 1 for lowercase character, 0 for anything else
  */
-int _islower(int c)
+int _is lowercase(int c)
 {
-if ( c >= 97 && c <= 122)
-{
+if (c >= 'a' && c <= 'z')
 return (1);
-}
+else
 return (0);
 }
+
+        
+
+
+
