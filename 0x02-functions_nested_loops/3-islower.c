@@ -4,15 +4,10 @@
  * @c: The character to be checked
  * Return: 1 for lowercase character, 0 for anything else
  */
-int _is lowercase(int c)
+int _islower(int c)
 {
 if (c >= 'a' && c <= 'z')
 return (1);
 else
 return (0);
 }
-
-        
-
-
-
