@@ -1,26 +1,20 @@
-CC := gcc
-SRC := main.c school.c
-OBJ := $(SRC:%.c=%.o)
-NAME := school
-RM := rm -f
-CFLAGS := -Wall -Werror -Wextra -pedantic
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
 
-%.o: %.c m.h
-#If object files(.o) dont exist or all the c files and header file in the directory have been updated then generate new object files
-	$(CC) -c $< -o $@
 
 all: $(OBJ)
-#if the object files have been updated then generate new executable
 	$(CC) $(OBJ) -o $(NAME)
 
-.PHONY: clean oclean re fclean
 clean:
-	$(RM) $(wildcard .*.un~) $(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
-fclean:
-	$(RM) $(wildcard .*.un~) $(NAME) $(wildcard *.o)
+fclean: clean oclean
 
-re: oclean all
+re: fclean all
